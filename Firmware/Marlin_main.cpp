@@ -604,6 +604,10 @@ void setup()
   MYSERIAL.begin(BAUDRATE);
   SERIAL_PROTOCOLLNPGM("start");
   SERIAL_ECHO_START;
+  #ifdef LAMPS
+  pinMode(LAMPS, OUTPUT);
+  digitalWrite(LAMPS, 1);
+  #endif
 
   // Check startup - does nothing if bootloader sets MCUSR to 0
   byte mcu = MCUSR;
