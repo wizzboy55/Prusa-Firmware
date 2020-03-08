@@ -320,7 +320,91 @@
 #endif
 
 
+/*****************************************************************
+* uPrint Motherboard
+******************************************************************/
+#if MOTHERBOARD == BOARD_UPRINT
+#define ELECTRONICS "uPrint"
 
+#define KNOWN_BOARD
+
+#ifndef __AVR_ATmega2560__
+    #error Oops!  Make sure you have 'Arduino Mega 2560' selected from the 'Tools -> Boards' menu.
+#endif
+
+#define FR_SENS 0
+#define X_STEP_PIN 54
+#define X_DIR_PIN 55
+#define X_MIN_PIN 3
+#define X_MAX_PIN 2
+#define X_ENABLE_PIN 38
+#define X_MS1_PIN -1
+#define X_MS2_PIN -1
+#define Y_STEP_PIN 60
+#define Y_DIR_PIN 61
+#define Y_MIN_PIN 15
+#define Y_MAX_PIN 14
+#define Y_ENABLE_PIN 56
+#define Y_MS1_PIN -1
+#define Y_MS2_PIN -1
+#define Z_STEP_PIN 46
+#define Z_DIR_PIN 48
+#define Z_MIN_PIN 18
+#define Z_MAX_PIN 19
+#define Z_ENABLE_PIN 62
+#define Z_MS1_PIN -1
+#define Z_MS2_PIN -1
+#define TEMP_BED_PIN A13
+#define TEMP_0_PIN A14
+#define HEATER_1_PIN -1
+#define TEMP_1_PIN -1
+#define TEMP_2_PIN -1
+
+// The SDSS pin uses a different pin mapping from file Sd2PinMap.h
+#define SDSS               0
+
+#ifndef SDSUPPORT
+    // these pins are defined in the SD library if building with SD support
+    #define SCK_PIN          0
+    #define MISO_PIN         0
+    #define MOSI_PIN         0
+#endif
+
+#define BEEPER 0
+#define BTN_EN1 0
+#define BTN_EN2 0
+#define BTN_ENC 0
+#define SDCARDDETECT 0
+#define LCD_PINS_RS 0
+#define LCD_PINS_ENABLE 0
+#define LCD_PINS_D4 0
+#define LCD_PINS_D5 0
+#define LCD_PINS_D6 0
+#define LCD_PINS_D7 0
+
+#define E0_STEP_PIN         26
+#define E0_DIR_PIN          28
+#define E0_ENABLE_PIN       24
+#define E0_MS1_PIN          -1
+#define E0_MS2_PIN          -1
+#define LED_PIN             13
+
+#define FAN_PIN            25
+
+#define KILL_PIN           -1 //80 with Smart Controller LCD
+#define SUICIDE_PIN        -1  //PIN that has to be turned on right after start, to keep power flowing.
+#define SDPOWER            -1
+
+#define LAMPS 10
+
+
+#define HEATER_0_PIN 9
+#define HEATER_1_PIN 12
+#define HEATER_BED_PIN 9 // TODO CHANGE
+#define FAN_1_PIN -1 //6
+#define PS_ON_PIN -1
+
+#endif
 
 
 #ifndef KNOWN_BOARD
